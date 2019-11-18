@@ -16,5 +16,10 @@ describe Account do
             expect(subject.print_statement).to eq ('date || credit || debit || balance')
         end
     end
+    describe '#desposit' do
+    it 'takes 1 argument' do
+            expect(subject).to respond_to(:deposit).with(1).argument
+        end
+    end
 
 end

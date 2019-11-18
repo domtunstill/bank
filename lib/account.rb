@@ -11,4 +11,7 @@ class Account
         'date || credit || debit || balance'
     end
 
+    def deposit(amount)
+    end
+
 end
