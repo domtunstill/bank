@@ -33,6 +33,11 @@ describe Account do
             subject.deposit(1000)
             expect(subject.transactions[0][:deposit]).to eq (1000)
         end
+        it 'deposit amount stored in the transactions array' do
+            allow(Time).to receive(:now).and_return(Time.new(2012, 01, 10))
+            subject.deposit(1000)
+            expect(subject.transactions[0][:date]).to eq ('10/01/2012')
+        end
     end
 
 end
