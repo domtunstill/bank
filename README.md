@@ -33,9 +33,8 @@ date || credit || debit || balance
 | Account initilizes with an empty history of transactions  | none | Transactions to be empty |
 | Prints empty statement at start | none |date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance|
 | Customer deposits 1000 | 1000 |Balance to be 1000|
-| Customer deposits 1000 | 1000 | Transaction to be stored in transactions|
+| Customer deposits 1000 | 1000 | 1 transaction to be stored in transactions|
 | Print statement after customer deposits 1000 on 10-01-2012 | 1000 | 10/01/2012 &#124;&#124; 1000.00 &#124;&#124; &#124;&#124; 1000.00|
-
 
 
 [comment]: <> ( | Client makes a deposit | 10/01/2012  1000  |  Balance to be 1000 |)
