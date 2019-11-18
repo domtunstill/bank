@@ -27,6 +27,8 @@ class Account
     if @balance >= amount
         @balance -= amount 
         @transactions << amount
+    else
+        'There is not enough money in the account.'
     end
   end
 

@@ -64,6 +64,9 @@ describe Account do
       subject.withdraw(500)
       expect(subject.balance).to eq (0)
     end
+    it 'customer notified they do not have enough money' do
+        expect(subject.withdraw(500)).to eq ('There is not enough money in the account.')
+      end
     it 'withdrawal is stored in the transactions array' do
       subject.deposit(1000)
       subject.withdraw(500)
