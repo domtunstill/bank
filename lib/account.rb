@@ -12,10 +12,9 @@ class Account
     end
 
     def deposit(amount)
-        t = Time.now
-        date = t.strftime('%d/%m/%Y')
+        date = Time.now.strftime('%d/%m/%Y')
         @balance += amount
-        @transactions << {:deposit => amount, :date => date}
+        @transactions << {:deposit => amount, :date => date, :balance => @balance}
     end
 
 end

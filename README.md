@@ -35,6 +35,7 @@ date || credit || debit || balance
 | Balance updated: Customer deposits 1000 | 1000 |Balance to be 1000|
 | Transaction saved: Customer deposits 1000 | 1000 | 1 transaction to be stored in transactions|
 | Transaction amount saved: Customer deposits 1000 | 1000 | 1000 to be returned |
+| Post transaction balance is saved: Customer deposits 1000 | 1000 | 1000 to be returned |
 | Transaction date saved: Customer deposits 1000 | 1000 | 10/01/2012 |
 | Print statement after customer deposits 1000 on 10-01-2012 | 1000 | 10/01/2012 &#124;&#124; 1000.00 &#124;&#124; &#124;&#124; 1000.00|
 
@@ -46,6 +47,7 @@ date || credit || debit || balance
 
 - String given as deposit or withdrawal amount
 - 2 deposits same, balance order
+- Transactions not entered in correct order, statement balance incorrect
 
 ## App 
 
