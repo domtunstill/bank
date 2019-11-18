@@ -2,6 +2,39 @@
 
 Bank is a Ruby library that allows a user to add deposits and withdrawals for a bank account and return a printed statement of the transactions and current balance.
 
+## Specification
+
+### Requirements
+
+* Deposits, withdrawal.
+* Account statement (date, amount, balance) printing.
+* Data can be kept in memory (it doesn't need to be stored to a database or anything).
+
+### Acceptance criteria
+
+**Given** a client makes a deposit of 1000 on 10-01-2012  
+**And** a deposit of 2000 on 13-01-2012  
+**And** a withdrawal of 500 on 14-01-2012  
+**When** she prints her bank statement  
+**Then** she would see
+
+```
+date || credit || debit || balance
+14/01/2012 || || 500.00 || 2500.00
+13/01/2012 || 2000.00 || || 3000.00
+10/01/2012 || 1000.00 || || 1000.00
+```
+
+### Testing Criteria
+
+| Criteria        | Input         | Output  |
+| ------------- |:-------------:| -----:|
+| Print statement, prints empty statement at start    |  |date || credit || debit || balance |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |
+
+
+
 ## App 
 
 Ruby version '2.6.3'
