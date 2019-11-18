@@ -26,7 +26,7 @@ class Account
   def withdraw(amount)
     if @balance >= amount
         @balance -= amount 
-        @transactions << amount
+        @transactions << { withdrawal:format_amount(amount), date: format_date, balance: format_amount(@balance) }
     else
         'There is not enough money in the account.'
     end

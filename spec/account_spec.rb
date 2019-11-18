@@ -66,7 +66,7 @@ describe Account do
     end
     it 'customer notified they do not have enough money' do
         expect(subject.withdraw(500)).to eq ('There is not enough money in the account.')
-      end
+    end
     it 'withdrawal is stored in the transactions array' do
       subject.deposit(1000)
       subject.withdraw(500)
@@ -76,19 +76,22 @@ describe Account do
         subject.withdraw(500)
         expect(subject.transactions.length).to eq 0
     end
-    # it 'deposit amount stored in the transactions array' do
-    #   subject.deposit(1000)
-    #   expect(subject.transactions[0][:deposit]).to eq '1000.00'
-    # end
-    # it 'balance after deposit stored in the transactions array' do
-    #   subject.deposit(1000)
-    #   expect(subject.transactions[0][:balance]).to eq '1000.00'
-    # end
-    # it 'deposit date stored in the transactions array' do
-    #   allow(Time).to receive(:now).and_return(Time.new(2012, 0o1, 10))
-    #   subject.deposit(1000)
-    #   expect(subject.transactions[0][:date]).to eq '10/01/2012'
-    # end
+    it 'withdrawal amount stored in the transactions array' do
+      subject.deposit(1000)
+      subject.withdraw(500)
+      expect(subject.transactions[1][:withdrawal]).to eq '500.00'
+    end
+    it 'balance after withdrawal stored in the transactions array' do
+      subject.deposit(1000)
+      subject.withdraw(500)
+      expect(subject.transactions[1][:balance]).to eq '500.00'
+    end
+    it 'deposit date stored in the transactions array' do
+      allow(Time).to receive(:now).and_return(Time.new(2012, 01, 14))
+      subject.deposit(1000)
+      subject.withdraw(500)
+      expect(subject.transactions[1][:date]).to eq '14/01/2012'
+    end
   end
 
 end
