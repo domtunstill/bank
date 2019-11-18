@@ -32,11 +32,19 @@ date || credit || debit || balance
 | Account balance to be 0 on initializaton   | none | Balance to be 0 |
 | Account initilizes with an empty history of transactions  | none | Transactions to be empty |
 | Prints empty statement at start | none |date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance|
+| Customer deposits 1000 | 1000 |Balance to be 1000|
+| Customer deposits 1000 | 1000 | Transaction to be stored in transactions|
+| Print statement after customer deposits 1000 on 10-01-2012 | 1000 | 10/01/2012 &#124;&#124; 1000.00 &#124;&#124; &#124;&#124; 1000.00|
 
 
 
 [comment]: <> ( | Client makes a deposit | 10/01/2012  1000  |  Balance to be 1000 |)
 [comment]: <> (| Client makes a deposit | 10/01/2012  1000  |  10/01/2012 &#124;&#124; 1000.00 &#124;&#124; &#124;&#124; 1000.00|)
+
+### Edge Cases
+
+- String given as deposit or withdrawal amount
+- 2 deposits same, balance order
 
 ## App 
 
