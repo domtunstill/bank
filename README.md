@@ -29,7 +29,7 @@ date || credit || debit || balance
 
 | Criteria        | Input         | Output  |
 | ------------- |:-------------:| -----:|
-| Print statement, prints empty statement at start    |  |date || credit || debit || balance |
+| Print statement, prints empty statement at start    |  |"date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance" |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |
 
