@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
-# Class
-
 class Account
+    
   attr_reader :balance, :transactions
 
   def initialize
@@ -11,9 +10,9 @@ class Account
   end
 
   def print_statement
-    statement = "date || credit || debit || balance \n"
-    @transactions.each do |transaction|
-      statement += "#{transaction[:date]} || #{transaction[:deposit]} || #{transaction[:withdrawal]} || #{transaction[:balance]} \n"
+    statement = "date || credit || debit || balance\n"
+    @transactions.reverse.each do |transaction|
+      statement += "#{transaction[:date]} || #{transaction[:deposit]} || #{transaction[:withdrawal]} || #{transaction[:balance]}\n"
     end
     statement
   end
