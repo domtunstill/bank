@@ -29,8 +29,10 @@ date || credit || debit || balance
 
 | Criteria      | Input         | Output|
 | ------------- |:-------------:| -----:|
-| Prints empty statement at start | none |date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance|
 | Account balance to be 0 on initializaton   | none | Balance to be 0 |
+| Account initilizes with an empty history of transactions  | none | Transactions to be empty |
+| Prints empty statement at start | none |date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance|
+
 
 
 [comment]: <> ( | Client makes a deposit | 10/01/2012  1000  |  Balance to be 1000 |)

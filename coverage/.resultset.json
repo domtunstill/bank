@@ -15,6 +15,12 @@
         1,
         null,
         null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/student/Documents/Projects/Week-10/bank/lib/account.rb": [
@@ -23,7 +29,8 @@
         1,
         null,
         1,
-        2,
+        3,
+        3,
         null,
         null,
         1,
@@ -33,6 +40,6 @@
         null
       ]
     },
-    "timestamp": 1574086538
+    "timestamp": 1574086870
   }
 }
