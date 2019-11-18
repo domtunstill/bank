@@ -22,6 +22,13 @@ describe Account do
       subject.deposit(1000.00)
       expect(subject.print_statement).to include('10/01/2012 || 1000.00 || || 1000.00')
     end
+    it 'returns a withdrawl on the statement after withdrawal transaction is made' do
+        allow(Time).to receive(:now).and_return(Time.new(2012, 01, 10))
+        subject.deposit(500.00)
+        allow(Time).to receive(:now).and_return(Time.new(2012, 01, 14))
+        subject.deposit(1000.00)
+        expect(subject.print_statement).to include('14/01/2012 || 500.00 || || 500.00')
+      end
   end
 
   describe '#desposit' do
