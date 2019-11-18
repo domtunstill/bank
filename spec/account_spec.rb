@@ -60,10 +60,15 @@ describe Account do
       subject.withdraw(500)
       expect(subject.balance).to eq (500)
     end
-    # it 'deposit is stored in the transactions array' do
-    #   subject.deposit(1000)
-    #   expect(subject.transactions.length).to eq 1
-    # end
+    it 'customer can not withdraw if amount is more than balance' do
+      subject.withdraw(500)
+      expect(subject.balance).to eq (0)
+    end
+    it 'deposit is stored in the transactions array' do
+      subject.deposit(1000)
+      subject.withdraw(500)
+      expect(subject.transactions.length).to eq 2
+    end
     # it 'deposit amount stored in the transactions array' do
     #   subject.deposit(1000)
     #   expect(subject.transactions[0][:deposit]).to eq '1000.00'

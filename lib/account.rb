@@ -24,7 +24,8 @@ class Account
   end
 
   def withdraw(amount)
-    @balance -= amount
+    @balance -= amount if @balance >= amount
+    @transactions << amount  
   end
 
   private
