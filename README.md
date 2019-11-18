@@ -27,13 +27,14 @@ date || credit || debit || balance
 
 ### Testing Criteria
 
-| Criteria        | Input         | Output  |
+| Criteria      | Input         | Output|
 | ------------- |:-------------:| -----:|
-| Print statement, prints empty statement at start    |  |"date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance" |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| Print statement, prints empty statement at start | none |date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance|
+| Account balance to be 0 on initializaton   | none | Balance to be 0 |
 
 
+[comment]: <> ( | Client makes a deposit | 10/01/2012  1000  |  Balance to be 1000 |)
+[comment]: <> (| Client makes a deposit | 10/01/2012  1000  |  10/01/2012 &#124;&#124; 1000.00 &#124;&#124; &#124;&#124; 1000.00|)
 
 ## App 
 
