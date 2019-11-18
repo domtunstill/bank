@@ -13,7 +13,7 @@ class Account
 
     def deposit(amount)
         @balance += amount
-        @transactions << amount
+        @transactions << {:deposit => amount}
     end
 
 end

@@ -29,10 +29,10 @@ describe Account do
             subject.deposit(1000)
             expect(subject.transactions.length).to eq (1)
         end
-        # it 'deposit is stored in the transactions array' do
-        #     subject.deposit(1000)
-        #     expect(subject.transactions[0][amount]).to eq (1000)
-        # end
+        it 'deposit amount stored in the transactions array' do
+            subject.deposit(1000)
+            expect(subject.transactions[0][:deposit]).to eq (1000)
+        end
     end
 
 end
