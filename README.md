@@ -45,8 +45,9 @@ date || credit || debit || balance
 
 ### Edge Cases
 
+- Amount given with an extra decimal place
 - String given as deposit or withdrawal amount
-- 2 deposits same, balance order
+- 2 deposits same date, balance order
 - Transactions not entered in correct order, statement balance incorrect
 
 ## App 

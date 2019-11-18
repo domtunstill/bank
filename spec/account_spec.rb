@@ -13,7 +13,12 @@ describe Account do
 
     describe '#print_statement' do
         it 'returns an empty statement at the start' do
-            expect(subject.print_statement).to eq ('date || credit || debit || balance')
+            expect(subject.print_statement).to eq ("date || credit || debit || balance \n")
+        end
+        it 'returns a deposit on the statement after deposit transaction is made' do
+            allow(Time).to receive(:now).and_return(Time.new(2012, 01, 10))
+            subject.deposit(1000.00)
+            expect(subject.print_statement).to include('10/01/2012 || 1000.00 || || 1000.00')
         end
     end
 
@@ -31,11 +36,11 @@ describe Account do
         end
         it 'deposit amount stored in the transactions array' do
             subject.deposit(1000)
-            expect(subject.transactions[0][:deposit]).to eq (1000)
+            expect(subject.transactions[0][:deposit]).to eq ("1000.00")
         end
         it 'balance after deposit stored in the transactions array' do
             subject.deposit(1000)
-            expect(subject.transactions[0][:balance]).to eq (1000)
+            expect(subject.transactions[0][:balance]).to eq ("1000.00")
         end
         it 'deposit date stored in the transactions array' do
             allow(Time).to receive(:now).and_return(Time.new(2012, 01, 10))

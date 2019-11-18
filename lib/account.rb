@@ -3,18 +3,31 @@ class Account
     attr_reader :balance, :transactions
 
     def initialize 
-        @balance = 0
+        @balance = 0.0
         @transactions = []
     end
 
     def print_statement
-        'date || credit || debit || balance'
+        statement = "date || credit || debit || balance \n"
+        @transactions.each do |transaction| 
+            statement += "#{transaction[:date]} || #{transaction[:deposit]} || || #{transaction[:balance]} \n"
+        end 
+        statement
     end
 
     def deposit(amount)
-        date = Time.now.strftime('%d/%m/%Y')
         @balance += amount
-        @transactions << {:deposit => amount, :date => date, :balance => @balance}
+        @transactions << {:deposit => format_amount(amount), :date => format_date, :balance => format_amount(@balance)}
+    end
+
+    private
+
+    def format_date
+        Time.now.strftime('%d/%m/%Y')
+    end
+
+    def format_amount(amount)
+        ("%.2f" % amount)
     end
 
 end
