@@ -29,7 +29,7 @@ date || credit || debit || balance
 
 | Criteria      | Input         | Output|
 | ------------- |:-------------:| -----:|
-| Print statement, prints empty statement at start | none |date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance|
+| Prints empty statement at start | none |date &#124;&#124; credit &#124;&#124; debit &#124;&#124; balance|
 | Account balance to be 0 on initializaton   | none | Balance to be 0 |
 
 
