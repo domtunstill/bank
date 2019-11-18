@@ -38,6 +38,13 @@ date || credit || debit || balance
 | Post transaction balance is saved: Customer deposits 1000 | 1000 | 1000 to be returned |
 | Transaction date saved: Customer deposits 1000 | 1000 | 10/01/2012 |
 | Print statement after customer deposits 1000 on 10-01-2012 | 1000 | 10/01/2012 &#124;&#124; 1000.00 &#124;&#124; &#124;&#124; 1000.00|
+| Balance updated: Customer withdraws 500 (with balance of 1000) | 500 |Balance to be 500|
+| Customer can't withdraw if withdrawal is more than balance | 500 |Balance to be 0|
+| Transaction saved: Customer withdraws 500 | 500 | 2 transaction to be stored in transactions|
+| Transaction amount saved: Customer withdraws 500 | 500 | 500 to be returned |
+| Post transaction balance is saved: Customer withdraws 500 (with balance of 1000) | 500 | 500 to be returned |
+| Transaction date saved: Customer withdraws 500 | 500 | 14/01/2012 |
+| Print statement after customer withdraws 500 on 14-01-2012 | 500 | 14/01/2012 &#124;&#124; 500.00 &#124;&#124; &#124;&#124; 500.00|
 
 
 [comment]: <> ( | Client makes a deposit | 10/01/2012  1000  |  Balance to be 1000 |)
@@ -45,10 +52,11 @@ date || credit || debit || balance
 
 ### Edge Cases
 
-- Amount given with an extra decimal place
+- Amount given with an extra decimal place will still print to balance
+- Can withdraw amount more than balance
 - String given as deposit or withdrawal amount
-- 2 deposits same date, balance order
-- Transactions not entered in correct order, statement balance incorrect
+[comment]: <>(- 2 deposits same date, balance order)
+[comment]: <>(- Transactions not entered in correct order, statement balance incorrect)
 
 ## App 
 
