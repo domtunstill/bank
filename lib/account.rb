@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'transaction'
 
 class Account
     
@@ -19,13 +20,13 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @transactions.insert(0, { deposit: format_amount(amount), date: format_date, balance: format_amount(@balance) })
+    @transactions.insert(0, Transaction.new(deposit: format_amount(amount), date: format_date, current_balance: format_amount(@balance)))
   end
 
   def withdraw(amount)
     if @balance >= amount
         @balance -= amount 
-        @transactions.insert(0, { withdrawal:format_amount(amount), date: format_date, balance: format_amount(@balance) })
+        @transactions.insert(0, Transaction.new(withdrawal:format_amount(amount), date: format_date, current_balance: format_amount(@balance)))
     else
         'There is not enough money in the account.'
     end
