@@ -15,7 +15,7 @@ describe Account do
 
   describe '#print_statement' do
     it 'returns an empty statement at the start' do
-      expect(subject.print_statement).to eq "date || credit || debit || balance\n"
+      expect(subject.print_statement).to eq "date || credit || debit || balance"
     end
     it 'returns a deposit on the statement after deposit transaction is made' do
       allow(Time).to receive(:now).and_return(Time.new(2012, 01, 10))
@@ -30,13 +30,14 @@ describe Account do
         expect(subject.print_statement).to include('14/01/2012 ||  || 500.00 || 500.00')
     end
     it 'returns a transactions in order' do
-      allow(Time).to receive(:now).and_return(Time.new(2012, 01, 10))
-      subject.deposit(1000)
-      allow(Time).to receive(:now).and_return(Time.new(2012, 01, 14))
-      subject.withdraw(500)
-      expect(subject.print_statement).to include("14/01/2012 ||  || 500.00 || 500.00\n10/01/2012 || 1000.00 ||  || 1000.00\n")
+        allow(Time).to receive(:now).and_return(Time.new(2012, 01, 10))
+        subject.deposit(1000)
+        allow(Time).to receive(:now).and_return(Time.new(2012, 01, 14))
+        subject.withdraw(500)
+        expect(subject.print_statement).to include("14/01/2012 ||  || 500.00 || 500.00\n10/01/2012 || 1000.00 ||  || 1000.00")
+    end
   end
-  end
+  
   describe '#desposit' do
     it 'takes 1 argument' do
       expect(subject).to respond_to(:deposit).with(1).argument
@@ -92,12 +93,12 @@ describe Account do
     it 'withdrawal amount stored in the transactions array' do
       subject.deposit(1000)
       subject.withdraw(500)
-      expect(subject.transactions[1][:withdrawal]).to eq '500.00'
+      expect(subject.transactions[0][:withdrawal]).to eq '500.00'
     end
     it 'balance after withdrawal stored in the transactions array' do
       subject.deposit(1000)
       subject.withdraw(500)
-      expect(subject.transactions[1][:balance]).to eq '500.00'
+      expect(subject.transactions[0][:balance]).to eq '500.00'
     end
     it 'deposit date stored in the transactions array' do
       allow(Time).to receive(:now).and_return(Time.new(2012, 01, 14))
