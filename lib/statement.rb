@@ -3,6 +3,7 @@
 # frozen_string_literal: true
 
 class Statement
+
   def print(transactions)
     statement = 'date || credit || debit || balance'
     transactions.each do |transaction|
@@ -22,4 +23,5 @@ class Statement
 
     ' '
   end
+  
 end

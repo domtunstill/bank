@@ -116,6 +116,8 @@
       "/Users/student/Documents/Projects/Week-10/bank/lib/account.rb": [
         null,
         null,
+        null,
+        null,
         1,
         1,
         null,
@@ -130,12 +132,16 @@
         1,
         10,
         10,
+        null,
+        null,
         null,
         null,
         1,
         8,
         5,
         5,
+        null,
+        null,
         null,
         3,
         null,
@@ -147,6 +153,8 @@
         null
       ],
       "/Users/student/Documents/Projects/Week-10/bank/lib/transaction.rb": [
+        null,
+        null,
         null,
         null,
         1,
@@ -161,6 +169,8 @@
         null
       ],
       "/Users/student/Documents/Projects/Week-10/bank/lib/statement.rb": [
+        null,
+        null,
         null,
         null,
         1,
@@ -181,6 +191,7 @@
         null,
         1,
         15,
+        null,
         5,
         null,
         null,
@@ -263,6 +274,6 @@
         null
       ]
     },
-    "timestamp": 1574164028
+    "timestamp": 1574167033
   }
 }

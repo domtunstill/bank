@@ -32,6 +32,6 @@ class Account
   end
 
   def print_statement(statement = Statement)
-    statement.new.print(@transactions)
+    puts statement.new.print(@transactions)
   end
 end
