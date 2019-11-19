@@ -2,33 +2,6 @@
 
 Bank is a Ruby library that allows a user to add deposits and withdrawals for a bank account and return a printed statement of the transactions and current balance.
 
-## Approach and Code Structure
-
-### Approach
-
-* I added the first few testing criteria below, which were the simpliest features to implement.
-* Initiailly I started with a single class and worked through the criteria.
-* After each passing test, I refactored and made new criteria for new features.
-* After the app was fully working and meeting the acceptance criteria I looked as ways to improve the code.
-* Using SRP I decided that the Account class was doing too much and decided to extract it into 3 classes
-
-### Structure
-
-The code is split into 3 classes.
-
-Account Class
-
-* This is the main class the user interacts with and is the 'manager class'
-* It keeps a history of the transactions on the account and account balance.
-
-Transaction Class
-
-* Stores the information about each transaction; deposit or withdrawal, amount and date made
-
-Statement Class
-
-* Handles producing a statement from the transaction history
-
 ## Specification
 
 ### Requirements
@@ -77,7 +50,34 @@ date || credit || debit || balance
 
 - Amount given with an extra decimal place will still print to balance - currently rounds to the nearest decimal place
 - Can withdraw amount more than balance - added checking so balance cannot be negative, (future feature: add custom overdraft amount for each customer)
-- String given as deposit or withdrawal amount - currently gives error regarding TypeError (String can't be coerced into Integer)
+- String given as deposit or withdrawal amount - currently gives error TypeError (String can't be coerced into Integer) and does not save the transaction
+
+## Approach and Code Structure
+
+### Approach
+
+* I added the first few testing criteria below, which were the simpliest features to implement.
+* Initiailly I started with a single class and worked through the criteria.
+* After each passing test, I refactored and made new criteria for new features.
+* After the app was fully working and meeting the acceptance criteria I looked as ways to improve the code.
+* Using SRP I decided that the Account class was doing too much and decided to extract it into 3 classes
+
+### Structure
+
+The code is split into 3 classes.
+
+Account Class
+
+* This is the main class the user interacts with and is the 'manager class'
+* It keeps a history of the transactions on the account and account balance.
+
+Transaction Class
+
+* Stores the information about each transaction; deposit or withdrawal, amount and date made
+
+Statement Class
+
+* Handles producing a statement from the transaction history
 
 
 ## App 
