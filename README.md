@@ -46,15 +46,11 @@ date || credit || debit || balance
 | Transaction date saved: Customer withdraws 500 | 500 | 14/01/2012 |
 | Print statement after customer withdraws 500 on 14-01-2012 | 500 | 14/01/2012 &#124;&#124; 500.00 &#124;&#124; &#124;&#124; 500.00|
 
-
-[comment]: <> ( | Client makes a deposit | 10/01/2012  1000  |  Balance to be 1000 |)
-[comment]: <> (| Client makes a deposit | 10/01/2012  1000  |  10/01/2012 &#124;&#124; 1000.00 &#124;&#124; &#124;&#124; 1000.00|)
-
 ### Edge Cases
 
-- Amount given with an extra decimal place will still print to balance
-- Can withdraw amount more than balance
-- String given as deposit or withdrawal amount
+- Amount given with an extra decimal place will still print to balance - currently rounds
+- Can withdraw amount more than balance - added checking so balance cannot be negative, (future feature: add custom overdraft amount for each customer)
+- String given as deposit or withdrawal amount - 
 [comment]: <>(- 2 deposits same date, balance order)
 [comment]: <>(- Transactions not entered in correct order, statement balance incorrect)
 
@@ -83,17 +79,19 @@ $ bundle install
 Add the following to the top of your project files which require the Bank app.
 
 ```ruby
-require 'bank'
+require 'account'
 ```
 
 Example below of a project file using the Bank app.
 
 ```ruby
-require 'bank'
+require 'account'
 
-# foobar.pluralize('word') # returns 'words'
-# foobar.pluralize('goose') # returns 'geese'
-# foobar.singularize('phenomena') # returns 'phenomenon'
+account = Account.new
+
+account.deposit(500) # adds 500 to the account and saves transaction
+account.withdraw(500) # withdraws 500 from the account and saves transaction
+account.print_statement # returns a printed statement of all transactions
 ```
 
 Run the following command in the project directory to run the tests:
