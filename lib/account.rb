@@ -3,7 +3,7 @@
 require_relative 'transaction'
 require_relative 'statement'
 
-# account class which handles balance and transaction history
+# account class which stores transaction history
 class Account
   attr_reader :balance, :transactions
 
