@@ -1,10 +1,9 @@
-# bank account class which handles balance and transaction history
-
 # frozen_string_literal: true
 
 require_relative 'transaction'
 require_relative 'statement'
 
+# account class which handles balance and transaction history
 class Account
   attr_reader :balance, :transactions
 
@@ -32,6 +31,6 @@ class Account
   end
 
   def print_statement(statement = Statement)
-    puts statement.new.print(@transactions)
+    statement.new.print(@transactions)
   end
 end

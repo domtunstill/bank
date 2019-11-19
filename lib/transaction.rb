@@ -1,7 +1,6 @@
-# transaction class which stores information about transaction
-
 # frozen_string_literal: true
 
+# transaction class which stores information about transaction
 class Transaction
   attr_reader :deposit, :withdrawal, :date, :current_balance
 
