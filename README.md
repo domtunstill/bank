@@ -122,6 +122,10 @@ account.withdraw(500) # withdraws 500 from the account and saves transaction
 account.print_statement # returns a printed statement of all transactions
 ```
 
+### App Screenshot
+
+![App Usage](/images/AppUsageScreenshot.png)
+
 Run the following command in the project directory to run the tests:
 
 ```
