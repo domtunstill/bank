@@ -6,13 +6,13 @@ describe Statement do
   let(:transaction) do
     double(:transaction,
            date: Time.new(2012, 0o1, 10),
-           deposit: 1000, withdrawal: nil,
+           deposit: 1000, withdrawal: 0,
            current_balance: 1000)
   end
   let(:transaction_2) do
     double(:transaction,
            date: Time.new(2012, 0o1, 14),
-           deposit: nil,
+           deposit: 0,
            withdrawal: 500,
            current_balance: 500)
   end
