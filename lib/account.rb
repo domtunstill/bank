@@ -10,22 +10,22 @@ class Account
   end
 
   def print_statement
-    statement = "date || credit || debit || balance\n"
-    @transactions.reverse.each do |transaction|
-      statement += "#{transaction[:date]} || #{transaction[:deposit]} || #{transaction[:withdrawal]} || #{transaction[:balance]}\n"
+    statement = "date || credit || debit || balance"
+    @transactions.each do |transaction|
+      statement += "\n#{transaction[:date]} || #{transaction[:deposit]} || #{transaction[:withdrawal]} || #{transaction[:balance]}"
     end
     statement
   end
 
   def deposit(amount)
     @balance += amount
-    @transactions << { deposit: format_amount(amount), date: format_date, balance: format_amount(@balance) }
+    @transactions.insert(0, { deposit: format_amount(amount), date: format_date, balance: format_amount(@balance) })
   end
 
   def withdraw(amount)
     if @balance >= amount
         @balance -= amount 
-        @transactions << { withdrawal:format_amount(amount), date: format_date, balance: format_amount(@balance) }
+        @transactions.insert(0, { withdrawal:format_amount(amount), date: format_date, balance: format_amount(@balance) })
     else
         'There is not enough money in the account.'
     end
