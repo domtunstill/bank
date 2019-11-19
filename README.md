@@ -48,9 +48,9 @@ date || credit || debit || balance
 
 ### Edge Cases
 
-- Amount given with an extra decimal place will still print to balance - currently rounds
+- Amount given with an extra decimal place will still print to balance - currently rounds to the nearest decimal place
 - Can withdraw amount more than balance - added checking so balance cannot be negative, (future feature: add custom overdraft amount for each customer)
-- String given as deposit or withdrawal amount - 
+- String given as deposit or withdrawal amount - currently gives error regarding TypeError (String can't be coerced into Integer)
 [comment]: <>(- 2 deposits same date, balance order)
 [comment]: <>(- Transactions not entered in correct order, statement balance incorrect)
 
