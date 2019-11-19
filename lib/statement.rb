@@ -19,7 +19,7 @@ class Statement
   end
 
   def format_amount(amount)
-    return format(' %.2f ', amount) unless amount.nil?
+    return format(' %<number>.2f ', number: amount) unless amount.nil?
 
     ' '
   end
