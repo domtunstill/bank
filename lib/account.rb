@@ -13,7 +13,7 @@ class Account
   def print_statement
     statement = "date || credit || debit || balance"
     @transactions.each do |transaction|
-      statement += "\n#{transaction[:date]} || #{transaction[:deposit]} || #{transaction[:withdrawal]} || #{transaction[:balance]}"
+      statement += "\n#{transaction.date} || #{transaction.deposit} || #{transaction.withdrawal} || #{transaction.current_balance}"
     end
     statement
   end

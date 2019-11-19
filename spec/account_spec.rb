@@ -52,16 +52,16 @@ describe Account do
     end
     it 'deposit amount stored in the transactions array' do
       subject.deposit(1000)
-      expect(subject.transactions[0][:deposit]).to eq '1000.00'
+      expect(subject.transactions[0].deposit).to eq '1000.00'
     end
     it 'balance after deposit stored in the transactions array' do
       subject.deposit(1000)
-      expect(subject.transactions[0][:balance]).to eq '1000.00'
+      expect(subject.transactions[0].current_balance).to eq '1000.00'
     end
     it 'deposit date stored in the transactions array' do
       allow(Time).to receive(:now).and_return(Time.new(2012, 01, 10))
       subject.deposit(1000)
-      expect(subject.transactions[0][:date]).to eq '10/01/2012'
+      expect(subject.transactions[0].date).to eq '10/01/2012'
     end
   end
 
@@ -93,18 +93,18 @@ describe Account do
     it 'withdrawal amount stored in the transactions array' do
       subject.deposit(1000)
       subject.withdraw(500)
-      expect(subject.transactions[0][:withdrawal]).to eq '500.00'
+      expect(subject.transactions[0].withdrawal).to eq '500.00'
     end
     it 'balance after withdrawal stored in the transactions array' do
       subject.deposit(1000)
       subject.withdraw(500)
-      expect(subject.transactions[0][:balance]).to eq '500.00'
+      expect(subject.transactions[0].current_balance).to eq '500.00'
     end
     it 'deposit date stored in the transactions array' do
       allow(Time).to receive(:now).and_return(Time.new(2012, 01, 14))
       subject.deposit(1000)
       subject.withdraw(500)
-      expect(subject.transactions[1][:date]).to eq '14/01/2012'
+      expect(subject.transactions[1].date).to eq '14/01/2012'
     end
   end
 
