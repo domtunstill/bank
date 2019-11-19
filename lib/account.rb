@@ -18,15 +18,15 @@ class Account
     statement
   end
 
-  def deposit(amount)
+  def deposit(amount, transaction=Transaction)
     @balance += amount
-    @transactions.insert(0, Transaction.new(deposit: format_amount(amount), date: format_date, current_balance: format_amount(@balance)))
+    @transactions.insert(0, transaction.new(deposit: format_amount(amount), date: format_date, current_balance: format_amount(@balance)))
   end
 
-  def withdraw(amount)
+  def withdraw(amount, transaction=Transaction)
     if @balance >= amount
         @balance -= amount 
-        @transactions.insert(0, Transaction.new(withdrawal:format_amount(amount), date: format_date, current_balance: format_amount(@balance)))
+        @transactions.insert(0, transaction.new(withdrawal:format_amount(amount), date: format_date, current_balance: format_amount(@balance)))
     else
         'There is not enough money in the account.'
     end
