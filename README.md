@@ -69,15 +69,15 @@ The code is split into 3 classes.
 Account Class
 
 * This is the main class the user interacts with and is the 'manager class'
-* It keeps a history of the transactions on the account and account balance.
+* It keeps a history of the transactions on the account.
 
 Transaction Class
 
-* Stores the information about each transaction; deposit or withdrawal, amount and date made
+* Stores the information about each transaction; deposit or withdrawal, amount and date made.
 
 Statement Class
 
-* Handles producing a statement from the transaction history
+* Handles producing a statement from the transaction history.
 
 
 ## App 
