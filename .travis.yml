@@ -1,2 +1,10 @@
 language: ruby
-# solution: "./WebApi.SoftBuilder/WebApi.SoftBuilder.sln"
+rvm:
+  - 2.5.0
+cache: bundler
+before_install:
+  - gem update --system
+  - gem install bundler
+script:
+  - bundle exec rubocop
+  - bundle exec rspec spec
